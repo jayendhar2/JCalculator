@@ -449,9 +449,9 @@
     <Color x:Key="navColor">#2B0B98</Color>
 
     <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{DynamicResource navColor}" />
-        <Setter Property="BarTextColor" Value="{DynamicResource btnColor}" />
-        <Setter Property="IconColor" Value="{DynamicResource btnColor}" />
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Dark}" />
+        <Setter Property="BarTextColor" Value="{StaticResource White}" />
+        <Setter Property="IconColor" Value="{StaticResource White}" />
     </Style>
     
     <Style TargetType="TabbedPage">
