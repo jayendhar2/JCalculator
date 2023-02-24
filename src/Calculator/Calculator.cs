@@ -20,6 +20,9 @@ public static class Calculator
             case "-":
                 result = value1 - value2;
                 break;
+            case "Mod":
+                result = value1 % value2;
+                break;
         }
 
         return result;
