@@ -35,7 +35,7 @@
                Clicked="OnPercentage" />
 
         <Button Text="√" Grid.Row="2" Grid.Column="0"
-               Clicked="OnSelectOperator" />
+               Clicked="OnSelectRootOperator" />
         <Button Text="(" Grid.Row="2" Grid.Column="1"
                Clicked="OnSelectOperator" />
         <Button Text=")" Grid.Row="2" Grid.Column="2"
@@ -84,7 +84,7 @@
 
 
         <Button Text="=" Grid.Row="6" Grid.Column="3" 
-               Clicked="OnCalculate" />
+               Clicked="OnCalculateResult" />
 
     </Grid>
 </ContentPage>
