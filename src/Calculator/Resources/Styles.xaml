@@ -197,7 +197,7 @@
         </Setter>
     </Style>
 
-    <Color x:Key="lblColor">Black</Color>
+    <Color x:Key="lblColor">White</Color>
     
     <Style TargetType="Label">
         <Setter Property="TextColor" Value="{DynamicResource lblColor}" />
@@ -446,12 +446,14 @@
     </Style>
     <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" ApplyToDerivedTypes="True" />
 
-    <Style TargetType="NavigationPage">
-        <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource Dark}, Dark={StaticResource Black}}" />
-        <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
-        <Setter Property="IconColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource White}}" />
-    </Style>
+    <Color x:Key="navColor">#2B0B98</Color>
 
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="{DynamicResource navColor}" />
+        <Setter Property="BarTextColor" Value="{DynamicResource btnColor}" />
+        <Setter Property="IconColor" Value="{DynamicResource btnColor}" />
+    </Style>
+    
     <Style TargetType="TabbedPage">
         <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Black}}" />
         <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />

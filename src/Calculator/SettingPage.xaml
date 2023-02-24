@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Calculator"
+             x:Class="Calculator.SettingPage"
+             Title="SettingPage">
+    <CollectionView x:Name="collectionView"
+                    x:FieldModifier="public"
+                    SelectionMode="Single" Margin="0,30,0,0">
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type local:FlyoutPageItem}">
+                <local:FlyoutPageItem Title="Dark"
+                                      itemColor="#333333" 
+                                      lblColor="White"
+                                      navColor="Black"/>
+                <local:FlyoutPageItem Title="Light"
+                                      itemColor="#b9aaee" 
+                                      lblColor="Black"
+                                      navColor="#bbbbff"/>
+                <local:FlyoutPageItem Title="Red"
+                                      itemColor="PaleVioletRed" 
+                                      lblColor="White"
+                                      navColor="IndianRed"/>
+                <local:FlyoutPageItem Title="Pink"
+                                      itemColor="Pink" 
+                                      lblColor="Black"
+                                      navColor="LightPink"/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="15,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView HeightRequest="50" WidthRequest="80" Color="{Binding itemColor}"/>
+                    <!--<Image Source="{Binding IconSource}" />-->
+                    <Label Grid.Column="1"
+                           Margin="20,0"
+                           Text="{Binding Title}"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center" />
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
