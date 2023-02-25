@@ -1,4 +1,6 @@
-﻿namespace Calculator;
+﻿using Microsoft.Maui.ApplicationModel;
+
+namespace Calculator;
 
 public partial class MainPage : ContentPage
 {
@@ -7,7 +9,6 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         OnClear(this, null);
-
     }
 
     string currentEntry = "";
@@ -46,10 +47,15 @@ public partial class MainPage : ContentPage
     void OnSelectOperator(object sender, EventArgs e)
     {
         LockNumberValue(resultText.Text);
+        OnCalculate(this, null);
 
         currentState = -2;
         Button button = (Button)sender;
         string pressed = button.Text;
+        if (pressed == "÷")
+        {
+            decimalFormat = "N2";
+        }
         mathOperator = pressed;            
     }
 
@@ -79,6 +85,7 @@ public partial class MainPage : ContentPage
         decimalFormat = "N0";
         this.resultText.Text = "0";
         currentEntry = string.Empty;
+        CurrentCalculation.Text = "";
     }
 
     void OnCalculate(object sender, EventArgs e)
@@ -95,20 +102,23 @@ public partial class MainPage : ContentPage
             this.resultText.Text = result.ToTrimmedString(decimalFormat);
             firstNumber = result;
             secondNumber = 0;
-            currentState = -1;
+            currentState = 1;
             currentEntry = string.Empty;
         }
     }    
 
     void OnNegative(object sender, EventArgs e)
     {
-        if (currentState == 1)
-        {
-            secondNumber = -1;
-            mathOperator = "×";
-            currentState = 2;
-            OnCalculate(this, null);
-        }
+        //if (currentState == 1)
+        //{
+        //    secondNumber = -1;
+        //    mathOperator = "×";
+        //    currentState = 2;
+        //    OnCalculate(this, null);
+        //}
+        double number;
+        double.TryParse(resultText.Text, out number);
+        resultText.Text = (number * (-1)).ToTrimmedString(decimalFormat);
     }
 
     void OnPercentage(object sender, EventArgs e)
