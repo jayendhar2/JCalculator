@@ -1,3 +1,4 @@
+<h2>Jayendhar's Group</h2>
 ---
 name: Jayendhar's Group (.NET MAUI - Calculator)
 description: Calculator application that demonstrates Grid layout, styling, and event handling.
